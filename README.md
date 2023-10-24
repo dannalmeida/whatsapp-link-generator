@@ -14,10 +14,10 @@ O projeto é um sistema em forma de API + Front-end pra gerar links de contato p
 
 ## Jornada do usuário
 
-**Gerar link:**
-1 - O usuário acessa o sistema pela `url`.
-2 - Faz o login no formulário de acesso.
-3 - Acessa o menu `Gerar Link`.
-4 - Escolhe o código de país.
-5 - Insere o número de telefone com DDD
-6 - Clica no botão `Gerar`.
+**Gerar link:**<br>
+1 - O usuário acessa o sistema pela `url`.<br>
+2 - Faz o login no formulário de acesso.<br>
+3 - Acessa o menu `Gerar Link`.<br>
+4 - Escolhe o código de país.<br>
+5 - Insere o número de telefone com DDD<br>
+6 - Clica no botão `Gerar`.<br>
