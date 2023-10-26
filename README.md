@@ -10,7 +10,7 @@ O projeto é um sistema em forma de API + Front-end pra gerar links de contato p
 
 ⚙ **Back-end:** _NodeJS/NextJS_<br>
 📲 **Front-end:** _ReactJS/NextJS_<br>
-💾 **Banco de dados:** _MySQL_<br>
+💾 **Banco de dados:** PostgreSQL<br>
 
 ## Jornada do usuário
 
