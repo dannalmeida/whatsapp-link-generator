@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de link do WhatsApp</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Gerador de link do WhatsApp</h1>
+        <div class="form-group">
+            <label for="telefone">Digite o número de telefone (com DDD):</label>
+            <input type="text" class="form-control" id="telefone" placeholder="Ex: 559999999999" />
+        </div>
+        <button class="btn btn-primary" id="gerarLink">Gerar link do WhatsApp</button>
+        <div class="mt-3">
+            <p id="whatsappLinkEscrito"></p>
+            <button class="btn btn-secondary" id="copiarLink" style="display: none;">Copiar Link</button>
+            <p id="whatsappLink"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function gerarLink() {
+            var telefone = $('#telefone').val();
+            if (telefone) {
+                telefone = telefone.replace(/\D/g, ''); 
+                var whatsappLink = 'https://api.whatsapp.com/send?phone=55' + telefone;
+                $('#whatsappLinkEscrito').html('<span>' + whatsappLink + '</span>');
+                $('#whatsappLink').html('ou <a class="d-inline-block mt-4 text-reset" href="' + whatsappLink + '" target="_blank"><strong>Clique aqui para abrir o WhatsApp</strong></a>');
+                $('#copiarLink').show(); 
+                $('#copiarLink').data('link', whatsappLink); 
+            } else {
+                $('#whatsappLink').text('Por favor, digite um número de telefone válido.');
+                $('#copiarLink').hide(); 
+            }
+        }
+
+        $(document).ready(function() {
+            $('#gerarLink').click(function() {
+                gerarLink();
+            });
+
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    gerarLink();
+                }                    
+            });
+            
+            $('#copiarLink').click(function() {
+                var whatsappLink = $(this).data('link');
+                var linkTemporario = $('<input>');
+                $('body').append(linkTemporario);
+                linkTemporario.val(whatsappLink).select();
+                document.execCommand('copy');
+                linkTemporario.remove();
+                alert('Link copiado para a área de transferência!');
+            });
+            
+        });
+    </script>
+</body>
+</html>
