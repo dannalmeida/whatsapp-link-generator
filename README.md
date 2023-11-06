@@ -4,20 +4,21 @@ Gerador de links de WhatsApp para tags &lt;a>
 
 ## Sobre o projeto
 
-O projeto é um sistema em forma de API + Front-end pra gerar links de contato para WhatsApp de forma simples para o usuário final. Será criado um sistema de usuário afim de salvar os links gerados para consulta posterior.
+O projeto é um formulário pra gerar links de contato para WhatsApp de forma simples para o usuário.
 
 ## Stack utilizada
 
-⚙ **Back-end:** _NodeJS/NextJS_<br>
 📲 **Front-end:** _ReactJS/NextJS_<br>
-💾 **Banco de dados:** PostgreSQL<br>
 
 ## Jornada do usuário
 
 **Gerar link:**<br>
 1 - O usuário acessa o sistema pela `url`.<br>
-2 - Faz o login no formulário de acesso.<br>
-3 - Acessa o menu `Gerar Link`.<br>
-4 - Escolhe o código de país.<br>
-5 - Insere o número de telefone com DDD<br>
-6 - Clica no botão `Gerar`.<br>
+2 - Acessa o menu `Gerar Link`.<br>
+3 - Insere o número de telefone com DDD<br>
+4 - Clica no botão `Gerar`.<br>
+5 - Agora só selecionar o link e copiar ou clicar no botão `Copiar Link`.<br>
+
+## Demo(atualmente em HTML + jQuery)
+
+https://linkparawhatsapp.com/
