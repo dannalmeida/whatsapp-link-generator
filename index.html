@@ -9,28 +9,71 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+
+    <style>
+      body {
+        background-color: #373e47;
+      }
+
+      h3,
+      span,
+      p {
+        color: #adbac7;
+      }
+
+      label,
+      strong {
+        color: #e4b8ff;
+      }
+
+      #gerarLink,
+      #copiarLink {
+        background-color: #545d68;
+        border: 1px solid #e3e3e330;
+      }
+
+      #gerarLink:hover,
+      #copiarLink:hover {
+        border: 1px solid #e3e3e3;
+      }
+
+      #gerarLink:focus,
+      #gerarLink:focus-visible,
+      #copiarLink:focus,
+      #copiarLink:focus-visible {
+        box-shadow: none;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-5">
-      <h1 class="mb-4 text-center">Gerador de link do WhatsApp</h1>
-      <div class="form-group">
-        <label for="telefone">Digite o número de telefone (com DDD):</label>
-        <input
-          type="text"
-          class="form-control"
-          id="telefone"
-          placeholder="Ex.: (99) 99999-9999"
-        />
-      </div>
-      <button class="btn btn-primary" id="gerarLink">
-        Gerar link do WhatsApp
-      </button>
-      <div class="mt-3">
-        <p id="whatsappLinkEscrito"></p>
-        <button class="btn btn-secondary" id="copiarLink" style="display: none">
-          Copiar Link
-        </button>
-        <p id="whatsappLink"></p>
+    <div class="container-fluid">
+      <div
+        class="vh-100 d-flex flex-wrap align-content-center justify-content-center"
+      >
+        <h3 class="col-12 mb-4 text-center">Gerador de link do WhatsApp</h3>
+        <div class="form-group col-12 col-md-6 col-lg-4">
+          <label for="telefone">Digite o número de telefone (com DDD):</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            placeholder="Ex.: (99) 99999-9999"
+          />
+          <button class="btn btn-primary mt-2" id="gerarLink">
+            Gerar link do WhatsApp
+          </button>
+          <div class="col-12 px-0 mt-3">
+            <p id="whatsappLinkEscrito"></p>
+            <button
+              class="btn btn-secondary"
+              id="copiarLink"
+              style="display: none"
+            >
+              Copiar Link
+            </button>
+            <p id="whatsappLink"></p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -68,7 +111,7 @@
             "https://api.whatsapp.com/send?phone=55" + telefone;
           $("#whatsappLinkEscrito").html("<span>" + whatsappLink + "</span>");
           $("#whatsappLink").html(
-            'ou <a class="d-inline-block mt-4 text-reset" href="' +
+            'ou <a class="d-inline-block mt-2 text-reset" href="' +
               whatsappLink +
               '" target="_blank"><strong>Clique aqui para abrir o WhatsApp</strong></a>'
           );
