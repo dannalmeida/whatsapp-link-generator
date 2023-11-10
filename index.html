@@ -42,6 +42,10 @@
         color: #e4b8ff;
       }
 
+      .texto-12 {
+        font-size: 0.75rem;
+      }
+
       #gerarLink,
       #copiarLink {
         background-color: #545d68;
@@ -77,6 +81,21 @@
         class="vh-100 d-flex flex-wrap align-content-center justify-content-center"
       >
         <h3 class="col-12 mb-4 text-center">Gerador de link para WhatsApp</h3>
+        <p class="col-12 mb-0 texto-12 text-center">
+          1. Insira o número do telefone que você deseja criar um link para
+          WhatsApp.
+        </p>
+        <p class="col-12 mb-0 texto-12 text-center">
+          2. Clique no botão "Gerar link".
+        </p>
+        <p class="col-12 mb-0 texto-12 text-center">
+          3. Após gerado, o link aparecerá. Clique no botão "Copiar link" ou
+          clique na opção do WhatsApp Web.
+        </p>
+        <p class="col-12 texto-12 text-center">
+          4. Com o link copiado, você poderá usar como "href" de alguma tag na
+          sua página.
+        </p>
         <div class="form-group col-12 col-md-6 col-lg-4">
           <label for="telefone">Digite o número de telefone (com DDD):</label>
           <input
@@ -86,7 +105,7 @@
             placeholder="Ex.: (99) 99999-9999"
           />
           <button class="btn btn-primary mt-2" id="gerarLink">
-            Gerar link do WhatsApp
+            Gerar link
           </button>
           <div class="col-12 px-0 mt-3">
             <p id="whatsappLinkEscrito"></p>
@@ -95,7 +114,7 @@
               id="copiarLink"
               style="display: none"
             >
-              Copiar Link
+              Copiar link
             </button>
             <p id="whatsappLink"></p>
           </div>
@@ -139,7 +158,7 @@
           $("#whatsappLink").html(
             'ou <a class="d-inline-block mt-2 text-reset" href="' +
               whatsappLink +
-              '" target="_blank"><strong>Clique aqui para abrir o WhatsApp</strong></a>'
+              '" target="_blank"><strong>Clique aqui para abrir o WhatsApp Web</strong></a>'
           );
           $("#copiarLink").show();
           $("#copiarLink").data("link", whatsappLink);
