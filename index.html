@@ -124,8 +124,11 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/jquery.mask.min.js"></script>
 
     <script>
+      $("#telefone").mask("(00) 00000-0000");
+
       $(document).ready(function () {
         $("#gerarLink").click(function () {
           gerarLink();
